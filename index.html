@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <a class="is_actived" href="#">Day</a>
+      <a href="#">Week</a>
+      <a href="#">Month</a>
+      <a href="#">Year</a>
+    </div>
+    <div class="todo-date">
+      <button>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <span>25 OCT 2021</span>
+      <button>
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="todo-container">
+
+      <div class="todo-input">
+        <i class="fas fa-align-left"></i>
+        <input id="todo-input" type="text" placeholder="Add a task...">
+      </div>
+
+      <div id="todos" class="todo-list">
+        
+        <div class="todo-item">
+          <div>
+            <input type="checkbox" name="" id="c">
+            <label for="c">This is the todo title</label>
+          </div>
+          <button> <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+       
+      <div class="todo-list">
+        <div class="todo-item">
+          <div>
+            <input type="checkbox" name="" id="ad">
+            <label for="ad">This is the todo title1</label>
+          </div>
+          <button> <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+       
+      <div class="todo-list">
+        <div class="todo-item">
+          <div>
+            <input type="checkbox" name="" id="a">
+            <label for="a">This is the todo title</label>
+          </div>
+          <button> <i class="fas fa-ellipsis-h"></i>
+          </button>
+        </div>
+       
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

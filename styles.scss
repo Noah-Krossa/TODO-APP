@@ -1,0 +1,166 @@
+// CONFIG
+$color_darkgray: #14181c;
+$color_gray: lighten($color_darkgray, 10);
+$color_lightgray: #f5f3f4;
+$color_red: #ba181b;
+$unit: .4rem;
+// NORMALIZE
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  &::after,
+  &::before,
+  & {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+a {
+  color: inherit;
+}
+button, input {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+
+// CONTAINER
+.container {
+  width: 350px;
+  min-height: 500px;
+  margin:$unit*2 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color_gray;
+  color: $color_lightgray;
+  border-radius: 5px;
+  font-size: small;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $color_darkgray;
+  & a {
+    text-decoration: none;
+    color:lighten($color_gray, 60);
+    display: inline-block;
+    padding: $unit $unit * 1.5;
+    &.is_actived {
+      color: $color_lightgray;
+      border-bottom: 2px solid $color_red;
+    }
+  }
+}
+
+// TODO Date
+.todo-date {
+  padding: $unit*4;
+  display: flex;
+  & button {
+    color:lighten($color_gray, 40);
+    display: inline-block;
+    padding: 0 $unit*2;
+  }
+}
+
+// TODO CONTAINER
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+// TODO INPUT
+.todo-input {
+  border-radius: 4px;
+  background-color: $color_darkgray;
+  color: $color_gray;
+  display: flex;
+  position: relative;
+  margin-bottom: $unit*2;
+
+  & input {
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+    cursor: default;
+    color: lighten($color_gray, 20);
+    padding: $unit $unit*4;
+    &:focus {
+      box-shadow: 0 0 0 2px darken($color_gray, 5);
+    }
+  }
+
+  & i {
+    display: block;
+    position: absolute;
+    left: $unit;
+    top: $unit* 1.5;
+    color: $color_gray;
+  }
+}
+
+// TODO ITEM
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+    padding: $unit 0;
+
+    & label {
+      position: relative;
+      user-select: none;
+      cursor: pointer;
+      transition: all .4s;
+      &::before {
+        transition: all .4s;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0%;
+        height: 0px;
+        background-color:lighten($color_gray, 25) ;
+      }
+    }
+  }
+  & i {
+    color: lighten($color_gray, 20);
+  }
+
+
+  & input {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow:0 0 0 1px darken($color_gray, 10);
+    margin-right: $unit;
+    transition: all .4s;
+    &:checked {
+      background-color:  darken($color_gray, 10);
+      border: 1px solid $color_gray;
+
+      & ~ label {
+        color:lighten($color_gray, 25);
+        font-style: italic;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          height: 1px;
+          background-color:lighten($color_gray, 25) ;
+        }
+      }
+    }
+  }
+}
